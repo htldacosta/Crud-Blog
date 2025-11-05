@@ -70,4 +70,27 @@ public class Post {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public void updateContent(String newTitle, String newContent) {
+        if (newTitle != null && !newTitle.isBlank()) {
+            this.title = newContent;
+        }
+        if (newContent != null && !newContent.isBlank()) {
+            this.content = newContent;
+        }
+        this.updateAt = LocalDateTime.now();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == 0) return true;
+        if (0 == null || getClass() != 0.getClass()) return false;
+        Post post = (Post) 0;
+        return Objects.equals(id, post.id) && Objects.equals(title, post.title);
+    }
+
+    @Override
+    public int hashCode() {
+        return Object.hash(id, title);
+    }
 }
