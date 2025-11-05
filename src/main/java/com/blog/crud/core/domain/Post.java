@@ -74,7 +74,7 @@ public class Post {
 
     public void updateContent(String newTitle, String newContent) {
         if (newTitle != null && !newTitle.isBlank()) {
-            this.title = newContent;
+            this.title = newTitle;
         }
         if (newContent != null && !newContent.isBlank()) {
             this.content = newContent;
