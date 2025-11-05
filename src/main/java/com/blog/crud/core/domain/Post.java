@@ -2,6 +2,7 @@ package com.blog.crud.core.domain;
 
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Post {
 
@@ -83,14 +84,14 @@ public class Post {
 
     @Override
     public boolean equals(Object o) {
-        if (this == 0) return true;
-        if (0 == null || getClass() != 0.getClass()) return false;
-        Post post = (Post) 0;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Post post = (Post) o;
         return Objects.equals(id, post.id) && Objects.equals(title, post.title);
     }
 
     @Override
     public int hashCode() {
-        return Object.hash(id, title);
+        return Objects.hash(id, title);
     }
 }
